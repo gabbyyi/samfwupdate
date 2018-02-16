@@ -5,23 +5,34 @@
 GITPROT=git
 
 # list of files to be updated
-set ffs_config.sh \
-    ffs-test      \
-    init1761      \
-    ledtest       \
-    loadsharc     \
-    l2access      \
-    post.sh       \
-    run.sh        \
-    rundemo.sh    \
-    sampost.py    \
-    boarddetect   \
+set boarddetect   \
     buttontest    \
     diytest       \
-    updateSamFw
-  
+    ffs_config.sh \
+    ffs-test      \
+    init1761      \
+    l2access      \
+    ledtest       \
+    loadSharc     \
+    post.sh       \
+    README.md     \
+    rundemo.sh    \
+    run.sh        \
+    SAM-Audio-Testing_Core1.ldr    \
+    SAM-DualCore-Reverb-EQ.dspproj \
+    SAM-DualCore-Reverb-EQ.xml     \
+    sampost.py    \
+    SamXmlCli     \
+    SS_App_Core1.dxe \
+    SS_App_Core1.ldr \
+    SS_App_Core2.dxe \
+    SS_App_Core2.ldr \
+    SS_App_linux  \
+    updateSamFw.sh\
+    UsbDeviceTest 
 
-# this file is run from /root
+# This file is meant to be run from /root, which all the files reside.  The update script
+# will git clone the lastest from github and then copy/install the files into /root
 
 # save old update directory before git cloning new one 
 if [ -d "$HOME/samfwupdate" ]; then
