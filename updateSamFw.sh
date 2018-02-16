@@ -45,7 +45,7 @@ if [ -d "$HOME/samfwupdate" ]; then
 	fi
 
         # create back up tarball of current update dir 
-	tar -czf $HOME/samfwupdate.backup.tgz  samfwupdate/
+	tar -cvf - samfwupdate | gzip > $HOME/samfwupdate.backup.tgz  
 
         # remove old update dire before git cloning
         echo "removing old update dir"
