@@ -1,2 +1,2 @@
 # samfwupdate
-binaries for the Sharc Audio Module board and update script
+binaries, example schematic, and scripts for the Sharc Audio Module board along with firmware update script
