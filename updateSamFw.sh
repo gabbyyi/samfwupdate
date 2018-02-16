@@ -64,3 +64,26 @@ do
         cp $HOME/samfwupdate/$file .
 done
 
+# install www files
+if [ -d "/var/www" ]; then
+        cd /var
+	tar -cvf - www | gzip > www.backup.tgz
+        rm -rf www
+	cd $HOME 
+else
+	cp -r $HOME/samfwupdate/www /var
+fi
+
+
+# install init.d files
+cp  $HOME/samfwupdate/S80dhcp-server /etc/init.d
+cp  $HOME/samfwupdate/S90usbi        /etc/init.d
+
+# install lighttdp files
+cp  $HOME/samfwupdate/modules.conf   /etc/lighttpd/
+cp  $HOME/samfwupdate/fastcgi.conf   /etc/lighttpd/conf.d/
+
+# install dhcp files
+cp  $HOME/samfwupdate/dhcpd.conf     /etc/dhcp/
+
+
